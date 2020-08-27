@@ -2,11 +2,12 @@ import React from 'react';
 import { Col, Row } from 'antd';
 import { UserPicture } from '../components/UserPicture';
 import { UserBars, UserCircles } from '../components/UserInformation';
+import { TimelineComponent } from '../components/Timeline';
 
 const user = {
   username: 'user',
   email: 'user@email.com',
-  bongaukset: [{name: 'kissa'}, {name: 'koira'}, {name: 'kala'}],
+  bongaukset: [{name: 'kissa', species: 'nisakas'}, {name: 'koira', species: 'nisakas'}, {name: 'kala', species: 'kala'}],
   achievements: [{name: 'testi'}],
   level: 3,
 }
@@ -23,6 +24,7 @@ export const Profile = () => {
       </Col>
     </Row>
       <UserCircles />
+      <TimelineComponent />
   </>  
   )
 }

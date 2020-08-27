@@ -13,3 +13,18 @@
 .container {
   padding-top: 10px;
 }
+
+.ant-card {
+ 
+}
+
+.flex {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  flex-grow: 1;
+}
+
+.nisakas {
+  background-color: lightblue;
+}
