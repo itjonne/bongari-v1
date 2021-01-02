@@ -2,6 +2,7 @@ import React from 'react';
 import { Collapse, Card, Button, Tooltip, List } from 'antd';
 import { CheckCircleTwoTone, HeartTwoTone } from '@ant-design/icons';
 import { useSelector } from 'react-redux';
+import { ObjectGridVirtualized } from '../components/ObjectGridVirtualized';
 
 const ObjectCardList = ({objects}) => {
   const filterObject = (object, name) => {
@@ -54,10 +55,16 @@ export const Objects = () => {
     <div>
       <Collapse accordion>
       <Collapse.Panel header={`Nisäkkäät: ${countBongauksetFromTotal(data, user, 'nisakas')}`} key='1'>
+            <ObjectGridVirtualized objects={data.nisakas} />
+            {/*
             <ObjectCardList objects={data.nisakas} />
+            */}
         </Collapse.Panel>
-        <Collapse.Panel header={`Linnut: ${countBongauksetFromTotal(data, user, 'lintu')}`} key='2'>        
+        <Collapse.Panel header={`Linnut: ${countBongauksetFromTotal(data, user, 'lintu')}`} key='2'> 
+        {/* 
         <ObjectCardList objects={data.lintu} />        
+        */}
+          <ObjectGridVirtualized objects={data.lintu} />       
         </Collapse.Panel>
         <Collapse.Panel header={`Kalat: ${countBongauksetFromTotal(data, user, 'kala')}`} key='3'>
         <ObjectCardList objects={data.kala} />
